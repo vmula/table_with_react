@@ -1,3 +1,42 @@
 .Table {
-    text-align: left;
-  }
+  text-align: left;
+}
+table, p {
+  margin: 0;
+  padding: 0;
+}
+.movies-table {
+  margin: 20px;
+  width: calc(100% - 40px);
+  border:1px solid  rgb(116, 66, 113);
+  border-collapse: collapse;
+}
+
+.movies-table th,
+.movies-table td {
+  vertical-align: top;
+  padding: 10px;
+  border:1px solid rgb(116, 66, 113);
+}
+
+.movies-table th {
+  background: rgb(123, 70, 148);
+  color:#fff;
+  font-weight: 600;
+}
+
+.movies-table tr:nth-child(even) {
+  background: #f0e1fd;
+}
+
+.movies-table tr:nth-child(odd) {
+  background: #fff;
+}
+
+.movies-table .asc-arrow {
+
+}
+
+.movies-table .desc-arrow {
+  
+}

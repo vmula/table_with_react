@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import './Table.css';
 
 function Table () {
     const [data, setData] = useState([]);
@@ -14,9 +15,9 @@ function Table () {
     }, []);
 
 
-    const showName = data.map(item => {
+    const showName = data.map((item, index) => {
         return (
-            <tr id={ item.show.id.toString() }>
+            <tr key={ index } id={ item.show.id.toString() }>
                 <td>{ item.show.name }</td>
                 <td>{ item.show.type }</td>
                 <td>{ item.show.language }</td>
@@ -25,9 +26,26 @@ function Table () {
         )
     });
 
+    function handleSort (event) {
+        const colName = event.target.innerText;
+        
+        console.log(event.target);
+        console.log(event.target.innerText);
+    }
+
     return (
         <div className="Table">
-            <table>{ showName }</table>
+            <table className="movies-table">
+                <thead>
+                    <tr>
+                        <th onClick={ handleSort }>Name</th>
+                        <th>Type</th>
+                        <th>Language</th>
+                        <th>Summary</th>
+                    </tr>
+                </thead>
+                <tbody>{ showName }</tbody>
+            </table>
         </div>
     );
 
